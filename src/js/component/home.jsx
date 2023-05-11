@@ -7,6 +7,7 @@ import List from "./list";
 //create your first component
 const Home = () => {
 	const [list, setList] = useState([])
+	const [maped_list, setMap] = useState([])
 	return (
 		<div className="container">
 			<div className="row justify-content-center mt-5">
@@ -17,9 +18,9 @@ const Home = () => {
 			<div className="row justify-content-center">
 				<div className="col d-flex justify-content-center">					
 					<ul className="list-group">
-						<Form list = {list} setList= {setList}/>
-						<List/>
-						<li className="list-group-item"> items left</li>
+						<Form list = {list} setList= {setList} maped_list = {maped_list} setMap = {setMap}/>
+						<List maped_list={maped_list}mn />
+						<li className="list-group-item "> {`${maped_list.length} items left`}</li>
 					</ul>
 				</div>				
 			</div>
