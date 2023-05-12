@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 const Form = (props) =>{
     const { list, setList,maped_list, setMap } = props;
     const [item, setItem] = useState ("")
     
-    
-
     const handle_change = () =>{
         console.log("item " + item)
         // no esta entrando a este ciclo en el primer enter, no se carga list 
@@ -16,11 +14,12 @@ const Form = (props) =>{
                 {x}
                 </li>
             )
-        });
-        
-        setMap(maped_item)
-        
+        });        
+        setMap(maped_item)        
     }
+    useEffect( handle_change, [list])
+
+    
     return(
     
         <>        
@@ -35,8 +34,7 @@ const Form = (props) =>{
                                             const newList = [...prevList, item];                                        
                                             return newList;
                                         });
-                                        handle_change()
-                                        console.log(list)
+                                        handle_change()                                        
                                     }
                                         
                                 }
