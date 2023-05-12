@@ -20,7 +20,7 @@ const Home = () => {
 					<ul className="list-group">
 						<Form list = {list} setList= {setList} maped_list = {maped_list} setMap = {setMap}/>
 						<List maped_list={maped_list}mn />
-						<li className="list-group-item "> {`${maped_list.length} items left`}</li>
+						<li className="list-group-item" > {`${maped_list.length} items left`}</li>
 					</ul>
 				</div>				
 			</div>
