@@ -8,6 +8,12 @@ import List from "./list";
 const Home = () => {
 	const [list, setList] = useState([])
 	const [maped_list, setMap] = useState([])
+
+	const handleDelete = (itemToDelete) =>
+      setList((prevList) =>
+        prevList.filter((x) =>x !== itemToDelete)
+      );
+
 	return (
 		<div className="container">
 			<div className="row justify-content-center mt-5">
@@ -18,7 +24,7 @@ const Home = () => {
 			<div className="row justify-content-center">
 				<div className="col d-flex justify-content-center">					
 					<ul className="list-group">
-						<Form list = {list} setList= {setList} maped_list = {maped_list} setMap = {setMap}/>
+						<Form list = {list} setList= {setList} maped_list = {maped_list} setMap = {setMap} handleDelete={handleDelete}/>
 						<List maped_list={maped_list}mn />
 						<li className="list-group-item" > {`${maped_list.length} items left`}</li>
 					</ul>
