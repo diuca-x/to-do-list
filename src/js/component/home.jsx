@@ -9,10 +9,12 @@ const Home = () => {
 	const [list, setList] = useState([])
 	const [maped_list, setMap] = useState([])
 
-	const handleDelete = (itemToDelete) =>
+	const handleDelete = (deleteIndex) =>
       setList((prevList) =>
-        prevList.filter((x) =>x !== itemToDelete)
+        prevList.filter((x,index) =>index !== deleteIndex)
       );
+
+
 
 	return (
 		<div className="container">
@@ -25,7 +27,7 @@ const Home = () => {
 				<div className="col d-flex justify-content-center">					
 					<ul className="list-group">
 						<Form list = {list} setList= {setList} maped_list = {maped_list} setMap = {setMap} handleDelete={handleDelete}/>
-						<List maped_list={maped_list}mn />
+						<List maped_list={maped_list} />
 						<li className="list-group-item" > {`${maped_list.length} items left`}</li>
 					</ul>
 				</div>				
